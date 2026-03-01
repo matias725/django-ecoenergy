@@ -323,12 +323,13 @@ body {
 
 /* ===== RAMO DE FLORES ===== */
 .bouquet {
-    position: relative;
+    position: absolute;
+    top: -80px; /* levantar sobre la carta */
+    left: 50%;
+    transform: translateX(-50%);
     width: 180px;
     height: 220px;
-    margin: 20px auto  -40px; /* sube la flor sobre la carta */
-    z-index: 8; /* encima del sobre para que parezca metida */
-    transform: translateY(-10px);
+    z-index: 8;
 }
 
 .flower {
