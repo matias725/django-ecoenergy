@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tulipán Animado</title>
+    <style>
+        body {
+            background-color: #fff5f5; /* Rosa muy suave */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .tulipan {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* El Tallo */
+        .tallo {
+            width: 10px;
+            height: 0;
+            background: #5d8233;
+            border-radius: 5px;
+            animation: crecerTallo 2s ease-in-out forwards;
+        }
+
+        /* Hojas del tulipán */
+        .hoja {
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            background: #5d8233;
+            border-radius: 0 100% 0 100%;
+            bottom: 50px;
+            left: -35px;
+            transform: rotate(-20deg) scale(0);
+            animation: aparecerHoja 1s forwards 1.5s;
+        }
+
+        .hoja.derecha {
+            left: 5px;
+            border-radius: 100% 0 100% 0;
+            transform: rotate(20deg) scale(0);
+        }
+
+        /* Capullo del Tulipán */
+        .capullo {
+            position: relative;
+            width: 80px;
+            height: 100px;
+            margin-bottom: -10px;
+            opacity: 0;
+            animation: aparecerFlor 1s forwards 2s;
+        }
+
+        .petalo {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffcc00; /* Tulipán Amarillo */
+            border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+            border: 1px solid #e6b800;
+        }
+
+        /* Animación de apertura */
+        .p1 { z-index: 3; transform: scaleX(0.8); }
+        .p2 { z-index: 2; transform: rotate(-15deg); animation: abrirIzq 2s forwards 3s; }
+        .p3 { z-index: 2; transform: rotate(15deg); animation: abrirDer 2s forwards 3s; }
+
+        @keyframes crecerTallo { to { height: 200px; } }
+        @keyframes aparecerHoja { to { transform: rotate(-20deg) scale(1); } }
+        @keyframes aparecerFlor { to { opacity: 1; } }
+        @keyframes abrirIzq { to { transform: rotate(-35deg); } }
+        @keyframes abrirDer { to { transform: rotate(35deg); } }
+
+        .mensaje {
+            margin-top: 40px;
+            font-family: 'Georgia', serif;
+            color: #d63384;
+            font-size: 24px;
+            opacity: 0;
+            animation: aparecerFlor 2s forwards 4s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tulipan">
+        <div class="capullo">
+            <div class="petalo p2"></div>
+            <div class="petalo p3"></div>
+            <div class="petalo p1"></div>
+        </div>
+        <div class="tallo">
+            <div class="hoja"></div>
+            <div class="hoja derecha"></div>
+        </div>
+    </div>
+
+    <h2 class="mensaje">Un tulipán para la flor más hermosa ❤️</h2>
+
+</body>
+</html>
