@@ -1,6 +1,35 @@
 const envelope = document.getElementById('envelope');
 const btnOpen = document.getElementById('open');
 const btnReset = document.getElementById('reset');
+const passwordOverlay = document.getElementById('passwordOverlay');
+const passwordInput = document.getElementById('passwordInput');
+const passwordBtn = document.getElementById('passwordBtn');
+const passwordMessage = document.getElementById('passwordMessage');
+
+// contraseña requerida para ver la carta
+const CORRECT_PASSWORD = 'teamo';
+
+// impedir abrir hasta validar
+btnOpen.disabled = true;
+
+passwordBtn.addEventListener('click', () => {
+    const val = passwordInput.value.trim().toLowerCase();
+    if (val === CORRECT_PASSWORD) {
+        passwordOverlay.style.display = 'none';
+        btnOpen.disabled = false;
+    } else {
+        passwordMessage.textContent = 'Contraseña incorrecta. Intenta de nuevo.';
+        passwordInput.value = '';
+        passwordInput.focus();
+    }
+});
+
+passwordInput.addEventListener('keypress', e => {
+    if (e.key === 'Enter') passwordBtn.click();
+});
+
+// al cargar, enfocar campo
+window.addEventListener('load', () => passwordInput.focus());
 
 // Tu carta personalizada
 const lines = [
