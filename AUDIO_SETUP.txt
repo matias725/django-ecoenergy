@@ -1,0 +1,190 @@
+📚 INSTRUCCIONES PARA AGREGAR MÚSICA A TU CARTA
+
+================================================================================================
+
+🎵 OPCIÓN 1: USAR TU PROPIA CANCIÓN (RECOMENDADO)
+================================================================================================
+
+1. OBTÉN TU CANCIÓN:
+   - Busca una canción que te guste (Spotify, YouTube, etc.)
+   - Descárgala en MP3 (usa servicios como: YouTubetoMP3.com, Convert2mp3.net)
+
+2. COLOCA EL ARCHIVO:
+   - Copia el archivo .mp3 a la carpeta "carta"
+   - Debe estar junto a: index.html, script.js, style.css
+
+3. ACTUALIZA EL NOMBRE EN script.js:
+   
+   Busca esta línea (aproximadamente línea 9):
+   ```
+   const CONFIG = {
+       nombrePersona: "Mi amor",
+       fechaAniversario: "2109",
+       cancion: "audio.mp3",    ← CAMBIA "audio.mp3" por tu nombre
+   ```
+   
+   Si tu canción se llama "mi-cancion-especial.mp3", cambia a:
+   ```
+   cancion: "mi-cancion-especial.mp3"
+   ```
+
+4. PRUEBA EN TU NAVEGADOR:
+   - Abre index.html
+   - Ingresa el código de acceso
+   - Haz clic en "Abrir Carta"
+   - ¡Debería reproducirse la música!
+
+================================================================================================
+
+🎵 OPCIÓN 2: USAR UNA CANCIÓN DE YOUTUBE (SIN DESCARGAR)
+================================================================================================
+
+Para este método necesitarías usar un servicio como Spotify Embed, pero requiere más configuración.
+Por ahora, se recomienda descargar localmente (Opción 1).
+
+================================================================================================
+
+🔊 FORMATOS SOPORTADOS
+================================================================================================
+
+✅ Soportados:
+- .mp3 (recomendado)
+- .wav
+- .ogg
+- .m4a
+
+⚠️ Nota: 
+Si usas formatos que no sean .mp3, algunos navegadores antiguos podrían no reproducirlos.
+
+================================================================================================
+
+🎶 RECOMENDACIONES DE CANCIONES
+================================================================================================
+
+Ideas de canciones románticas:
+- "La Vida es Bella" - Various Artists
+- "Perfect" - Ed Sheeran
+- "Señorita" - Shawn Mendes, Camila Cabello
+- "All of Me" - John Legend
+- "Make You Feel My Love" - Adele
+- "Pasado a Limpio" - Grupo Manía
+- Cualquier canción que sea especial para ustedes ❤️
+
+💡 Consejo: Usa una canción con significado especial para ambos.
+
+================================================================================================
+
+🆘 SOLUCIÓN DE PROBLEMAS
+================================================================================================
+
+❌ PROBLEMA: "Dice que no encuentra el archivo"
+✅ SOLUCIÓN:
+   1. Verifica que el archivo esté en la carpeta correcta
+   2. Asegúrate de que el nombre en script.js sea EXACTO
+   3. Los nombres son sensibles a mayúsculas: "Cancion.mp3" ≠ "cancion.mp3"
+
+❌ PROBLEMA: "No suena nada cuando abro la carta"
+✅ SOLUCIÓN:
+   1. Abre la consola del navegador (F12)
+   2. Busca errores en la pestaña "Console"
+   3. Algunos navegadores bloquean audio automático por seguridad
+   4. Intenta hacer clic en la carta después de abierta
+
+❌ PROBLEMA: "Suena pero se corta"
+✅ SOLUCIÓN:
+   1. Prueba con otro archivo MP3
+   2. Verifica que el archivo no esté dañado
+   3. Intenta usar un conversor online: online-convert.com
+
+❌ PROBLEMA: "¿Cómo convierto de YouTube a MP3?"
+✅ SOLUCIÓN:
+   Sitios web gratuitos (úsalos solo si respetas derechos de autor):
+   - ytmp3.com
+   - mp3converter.net
+   - savefrom.net
+   
+   ⚠️ Recuerda: solo convierta música de dominio público o con permiso.
+
+================================================================================================
+
+📝 ESTRUCTURA DE CARPETA CORRECTA
+================================================================================================
+
+carta/
+├── index.html           ← Página principal
+├── script.js            ← Archivo de configuración JSON
+├── style.css            ← Estilos
+├── ramo.html            ← Página adicional
+├── tulipan.html         ← Página adicional
+├── audio.mp3            ← 🔴 TU CANCIÓN VA AQUÍ (o otro nombre)
+├── README.md            ← Instrucciones
+└── .git/                ← (Creado automáticamente por git)
+
+❌ MAL:
+- Canción en Descargas/
+- Canción en otra carpeta
+- Nombre mal escrito en script.js
+
+✅ BIEN:
+- Canción en la misma carpeta que index.html
+- Nombre exacto en script.js (respetando mayúsculas)
+
+================================================================================================
+
+🎧 PRUEBA RÁPIDA SIN CANCIÓN
+================================================================================================
+
+Si quieres probar sin música por ahora:
+
+En script.js, cambiar:
+```
+habilitarSeguridad: true
+```
+A:
+```
+habilitarSeguridad: false
+```
+
+Esto desactiva la contraseña y te permite ver la carta directamente.
+
+Luego, cuando tengas tu canción lista, activa nuevamente la seguridad.
+
+================================================================================================
+
+💡 TIPS AVANZADOS
+================================================================================================
+
+✨ Controlar volumen:
+   En script.js, línea ~90, encontrarás:
+   ```
+   audio.volume = 0.5;  // 0.5 = 50% del volumen
+   ```
+   Cambia a un número entre 0 (sin sonido) y 1 (máximo)
+
+✨ Reproducir en loop:
+   Si quieres que la canción se repita, añade en script.js:
+   ```
+   audio.loop = true;
+   ```
+
+✨ Auto-pausar cuando cierre:
+   Eso ya está implementado 😊
+
+================================================================================================
+
+¿NECESITAS AYUDA?
+================================================================================================
+
+1. Revisa: ¿Está el archivo en la carpeta correcta?
+2. Revisa: ¿El nombre en script.js es exacto?
+3. Revisa: ¿Abriste con un servidor (no como archivo local)?
+4. Intenta: Recargar la página (Ctrl+Shift+R)
+5. Intenta: Usar otro navegador (Chrome, Firefox, Edge)
+6. Revisa: La consola del navegador (F12 → Console)
+
+================================================================================================
+
+¡Que disfrutes tu página especial! ❤️
+
+Con amor,
+Tu código favorito 💕
